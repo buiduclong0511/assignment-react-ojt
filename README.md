@@ -61,12 +61,12 @@ function ProductsList() {
 - B: Props có thể coi là đối số của Component và được sử dụng để nhận dữ liệu từ bên ngoài vào
 - C: Props có thể coi là tên của Component và được sử dụng để định danh cho Component
 ---
-#### Câu 6: Một component có thể nhận vào bao nhiêu props?
+#### Câu 6: Trong ReactJS, một component có thể nhận vào bao nhiêu props?
 - A: Một component chỉ có thể nhận vào 1 props
 - B: Một component có thể nhận vào 1 số lượng props nhất định tùy vào việc chúng ta định nghĩa nó như thế nào
 - C: Một component có thể nhận vào vô số props
 ---
-#### Câu 7: Props sẽ hợp lệ khi được nhận các kiểu dữ liệu nào?
+#### Câu 7: Trong ReactJS, props sẽ hợp lệ khi được nhận các kiểu dữ liệu nào?
 - A: Chuỗi
 - B: Tất cả các kiểu dữ liệu có trong JavaScript
 - C: Tất cả các kiểu dữ liệu ngoại trừ các kiểu dữ liệu tham chiếu (object, array, function)
