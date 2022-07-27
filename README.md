@@ -142,3 +142,156 @@ function App() {
 - A: `<p>This is paragraph</p>`
 - B: `<p>Children is not found</p>`
 - C: `null`
+---
+#### Câu 14: Các lệnh `console.log` sau đây sẽ in ra theo thứ tự nào?
+```js
+function App() {
+    useEffect(() => {
+        console.log('Hi')
+    }, [])
+
+    return (
+        <div>
+            {console.log('Hello')} 
+            <h1>Hello world</h1>
+        </div>
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<App />)
+```
+- A: `Hi`, `Hello`, `Hi`
+- B: `Hi`, `Hello`
+- C: `Hello`, `Hi`
+---
+#### Câu 15: Các lệnh `console.log` sau đây sẽ in ra theo thứ tự nào?
+```js
+function App() {
+    useEffect(() => {
+        console.log('Hi')
+
+        return () => console.log('Goodbye')
+    }, [])
+
+    return (
+        <div>
+            {console.log('Hello')}
+            <h1>Hello world</h1>
+        </div>
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<App />)
+```
+- A: `Hi`, `Hello`, `Goodbye`
+- B: `Hello`, `Hi`, `Goodbye`
+- C: `Hello`, `Hi`
+---
+#### Câu 15: Các lệnh `console.log` sau đây sẽ in ra theo thứ tự nào?
+```js
+function App() {
+    const [state, setState] = useState(0)
+
+    useEffect(() => {
+        setState(1)
+    }, [])
+
+    useEffect(() => {
+        console.log('Hi')
+
+        return () => console.log('Goodbye')
+    }, [state])
+
+    return (
+        <div>
+            <h1>Hello world</h1>
+        </div>
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<App />)
+```
+- A: `Hi`, `Goodbye`, `Hi`
+- B: `Hi`, `Hi`, `Goodbye`
+- C: `Hi`, `Goodbye`
+---
+#### Câu 16: Các lệnh `console.log` sau đây sẽ in ra theo thứ tự nào?
+```js
+function App() {
+    const [state, setState] = useState(0)
+
+    useEffect(() => {
+        setState(1)
+    }, [])
+
+    useEffect(() => {
+        console.log('Hi')
+
+        return () => console.log('Goodbye')
+    }, [state])
+
+    return (
+        <div>
+            {consol.log('Hello')}
+            <h1>Hello world</h1>
+        </div>
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<App />)
+```
+- A: `Hello`, `Hi`, `Goodbye`, `Hello`, `Hi`
+- B: `Hello`, `Hi`, `Hello`, `Goodbye`, `Hi`
+- C: `Hi`, `Goodbye`, `Hello`
+---
+#### Câu 17: Lệnh `console.log` sau đây sẽ in ra giá trị bao nhiêu?
+```js
+function Add() {
+    const [state, setState] = useState(0)
+
+    let variable = 10
+
+    console.log(`${state} ${variable}`)
+
+    variable = 11;
+
+    useEffect(() => {
+        setState(1)
+    }, [])
+
+    return <div>Hello world</div>
+}
+```
+- A: `0 10`, `1 11`
+- B: `0 10`, `1 10`
+- C: `0 10`, `0 11`
+---
+#### Câu 18: Lệnh `console.log` sau đây sẽ in ra giá trị bao nhiêu?
+```js
+function Add() {
+    const [state, setState] = useState(0)
+
+    const variable = useRef(10)
+
+    console.log(`${state} ${variable.current}`)
+
+    variable.current = 11
+
+    useEffect(() => {
+        setState(1)
+    }, [])
+
+    return <div>Hello world</div>
+}
+```
+- A: `0 10`, `1 11`
+- B: `0 10`, `1 10`
+- C: `0 10`, `0 11`
