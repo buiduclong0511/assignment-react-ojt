@@ -143,7 +143,17 @@ function App() {
 - B: `<p>Children is not found</p>`
 - C: `null`
 ---
-#### Câu 14: Các lệnh `console.log` sau đây sẽ in ra theo thứ tự nào?
+#### Câu 14: `useState` dùng để làm gì?
+- A: Tạo ra 1 biến không thể bị thay đổi theo thời gian
+- B: Tạo ra 1 biến chỉ để lưu dữ liệu của response trả về khi gọi API
+- C: Tạo ra 1 biến thể hiện trạng thái của component
+---
+#### Câu 15: Khi thay đổi giá trị của state thì component sẽ như thế nào? 
+- A: Component sẽ render lại
+- B: Component không được render lại
+- C: Giá trị của state sẽ không thể bị thay đổi
+---
+#### Câu 16: Các lệnh `console.log` sau đây sẽ in ra theo thứ tự nào?
 ```js
 function App() {
     useEffect(() => {
@@ -166,7 +176,7 @@ root.render(<App />)
 - B: `Hi`, `Hello`
 - C: `Hello`, `Hi`
 ---
-#### Câu 15: Các lệnh `console.log` sau đây sẽ in ra theo thứ tự nào?
+#### Câu 17: Các lệnh `console.log` sau đây sẽ in ra theo thứ tự nào?
 ```js
 function App() {
     useEffect(() => {
@@ -191,7 +201,7 @@ root.render(<App />)
 - B: `Hello`, `Hi`, `Goodbye`
 - C: `Hello`, `Hi`
 ---
-#### Câu 15: Các lệnh `console.log` sau đây sẽ in ra theo thứ tự nào?
+#### Câu 18: Các lệnh `console.log` sau đây sẽ in ra theo thứ tự nào?
 ```js
 function App() {
     const [state, setState] = useState(0)
@@ -221,7 +231,7 @@ root.render(<App />)
 - B: `Hi`, `Hi`, `Goodbye`
 - C: `Hi`, `Goodbye`
 ---
-#### Câu 16: Các lệnh `console.log` sau đây sẽ in ra theo thứ tự nào?
+#### Câu 19: Các lệnh `console.log` sau đây sẽ in ra theo thứ tự nào?
 ```js
 function App() {
     const [state, setState] = useState(0)
@@ -252,7 +262,7 @@ root.render(<App />)
 - B: `Hello`, `Hi`, `Hello`, `Goodbye`, `Hi`
 - C: `Hi`, `Goodbye`, `Hello`
 ---
-#### Câu 17: Lệnh `console.log` sau đây sẽ in ra giá trị bao nhiêu?
+#### Câu 20: Lệnh `console.log` sau đây sẽ in ra giá trị bao nhiêu?
 ```js
 function Add() {
     const [state, setState] = useState(0)
@@ -269,12 +279,16 @@ function Add() {
 
     return <div>Hello world</div>
 }
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<App />)
 ```
 - A: `0 10`, `1 11`
 - B: `0 10`, `1 10`
 - C: `0 10`, `0 11`
 ---
-#### Câu 18: Lệnh `console.log` sau đây sẽ in ra giá trị bao nhiêu?
+#### Câu 21: Lệnh `console.log` sau đây sẽ in ra giá trị bao nhiêu?
 ```js
 function Add() {
     const [state, setState] = useState(0)
@@ -291,7 +305,37 @@ function Add() {
 
     return <div>Hello world</div>
 }
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<App />)
 ```
 - A: `0 10`, `1 11`
 - B: `0 10`, `1 10`
 - C: `0 10`, `0 11`
+---
+#### Câu 22: Lệnh `console.log` sau đây sẽ in ra giá trị bao nhiêu?
+```js
+function Add() {
+    let [state, setState] = useState(0);
+
+    let variable = 10;
+
+    console.log(`${state} ${variable}`);
+
+    variable = 11;
+
+    useEffect(() => {
+        state = 1;
+    }, []);
+
+    return <div>Hello world</div>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<App />)
+```
+- A: `0 10`
+- B: `0 10`, `1 10`
+- C: `0 10`, `0 10`
