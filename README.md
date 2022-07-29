@@ -339,3 +339,90 @@ root.render(<App />)
 - A: `0 10`
 - B: `0 10`, `1 10`
 - C: `0 10`, `0 10`
+
+---
+#### Câu 23: Phát biểu nào sau đây là **sai**?
+- A: Redux là một mô hình quản lý dữ liệu
+- B: Redux-toolkit và React-redux chỉ được sử dụng trong ứng dụng React
+- C: Redux có thể được sử dụng trong bất kỳ 1 ứng dụng nào được viết bởi JavaScript
+
+---
+#### Câu 24: Trong các thành phần sau đây, đâu là những thành phần có trong Redux?
+ - A: Reducer, State, Ref, Store, Actions
+ - B: Reducer, State, Middleware, Store, Actions
+ - C: Reducer, Style, Middleware, Store, Actions
+
+ ---
+#### Câu 25: `combineReducers` dùng để làm gì?
+- A: Gom các reducer nhỏ thành 1 reducer duy nhất (Root reducer)
+- B: Gom các store nhỏ thành 1 store duy nhất
+- C: Tách reducer lơn thành các reducer nhỏ
+
+---
+#### Câu 26: Điền vào chỗ trống từ khóa thích hợp?
+```js
+const reducer = (state = { value: 0 }, action) => {
+    switch(action.___________) {
+        case 'increment':
+            return { value: state.value + 1 }
+        case 'decrement':
+            return { value: state.value - 1 }
+        default:
+            return state
+    }
+}
+```
+- A: `payload`
+- B: `type`
+- C: `typical`
+
+---
+#### Câu 27: Điền vào chỗ trống từ khóa thích hợp?
+```js
+const counterSlice = createSlice({
+    name: 'counter',
+    initialState: {
+        value: 0
+    },
+    ___________: {
+        increment: (state) => {
+            state.value += 1
+        },
+        decrement: (state) => {
+            state.value -= 1
+        },
+    },
+    ___________: (builder) => {
+        builder.addCase(asyncIncrement.fulfilled, (state) => {
+            state.value += 1
+        })
+    }
+})
+```
+- A: `actions`, `asyncActions`
+- B: `reducers`, `asyncReducers`
+- C: `reducers`, `extraReducers`
+
+---
+#### Câu 28: Action được thể hiện dưới dạng như nào?
+- A: 1 plain object với các key là `type` (required) và `payload` (optional)
+- B: 1 plain object với các key là `type` (required) và `payload` (required)
+- C: 1 plain object với các key là `type` (optional) và `payload` (optional)
+
+---
+#### Câu 29: `Async action` là gì?
+- A: Là 1 action có khả năng xử lý các tác vụ bất đồng bộ
+- B: Là 1 action có khả năng trả về 1 `plain object`
+- C: Là 1 action có `type` và `payload`
+
+---
+#### Câu 30: Flow của redux là gì?
+- A: Dispatch action -> Reducer nhận vào action -> Reducer phân loại action và thay đổi state -> Cập nhật state mới trên view
+- B: Dispatch action -> Reducer nhận vào action -> Reducer phần lại action và thay đổi state
+- C: Reducer nhận vào action -> Dispatch action -> Reducer thay đổi state -> Cập nhật state mới trên view
+
+---
+#### Câu 31: Thư viện `Redux persist` dùng để làm gì?
+- A: Lưu state của redux vào cookie
+- B: Lưu state của redux vào session
+- C: Lưu state của redux vào local storage
