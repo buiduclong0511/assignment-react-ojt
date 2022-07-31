@@ -248,7 +248,7 @@ function App() {
 
     return (
         <div>
-            {consol.log('Hello')}
+            {console.log('Hello')}
             <h1>Hello world</h1>
         </div>
     )
